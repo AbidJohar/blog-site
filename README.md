@@ -40,6 +40,7 @@ A fully functional MERN stack blog application with secure authentication, CRUD 
 
 ## 📦 Folder Structure
 
+```
 project-root/
 ├── client/ # React frontend
 │ ├── src/
@@ -68,15 +69,44 @@ project-root/
 │
 └── README.md
 
-## ⚙️ Setup Instructions
-
-### ✅ 1. Clone the repository
-
-```bash
-git clone https://github.com/yourusername/blog-site.git
-cd blog-site
-
 ```
+
+## Setup Instructions
+
+1. **Clone the repository:**
+   ```
+   git clone https://github.com/yourusername/blog-app.git
+   cd blog-site
+   ```
+
+2. **Install dependencies:**
+   ```
+   cd blogserverside and then run npm install
+   and
+   cd blogclientside and then also run npm install
+   ```
+
+3. **Set up environment variables:**
+   Create a `.env` file in the root directory and define the following variables:
+   ```
+   server :
+   PORT=<your port>
+   MONGODB_URI=<your-db-url>
+   JWT_SECRET= <your secret key>
+   JWT_EXPIRES_IN=<expiry time>
+
+   ```
+
+4. **Run the application:**
+   ```
+    server:
+    npm run dev
+    
+    client:
+    npm run dev
+   ```
+
+ 
 
 
 ## 🧪 API Testing (Postman)
