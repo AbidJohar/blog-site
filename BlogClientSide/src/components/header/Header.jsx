@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import LogoutBtn from "./LogoutBtn";
 import { useSelector } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
+import {FaBars} from 'react-icons/fa'
 
 const Header = () => {
   // Get authentication state from Redux
@@ -80,10 +81,10 @@ const Header = () => {
             className="px-4 py-2  hover:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-gray-500"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-             ☰
+             <FaBars size={30}/>
           </button>
           {isMenuOpen && (
-            <div className="absolute top-16 right-4 bg-gray-800 text-white p-4 rounded-lg shadow-lg z-10">
+            <div className="absolute top-16 right-1 bg-gray-800 text-white p-4 rounded-lg shadow-lg z-10">
               {navItems.map(
                 (navItem) =>
                   navItem.active && (

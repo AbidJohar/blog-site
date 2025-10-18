@@ -41,22 +41,23 @@ function HomePage() {
 
   return (
     <div className="w-full">
-      <div
-        className="w-full h-[80vh] flex items-end justify-start"
-        style={{
-          backgroundImage: `url(${wallpaperImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        {!isAuthenticated && (
-          <Link to="/login">
-            <button className="mb-8 ml-10 text-white font-bold py-4 px-8 rounded border-2 hover:bg-gradient-to-r from-[#0A5455] to-[#72D2F3]">
-              Create Your Blog
-            </button>
-          </Link>
-        )}
-      </div>
+  <div className="relative w-full h-[80vh] flex items-end justify-start overflow-hidden bg-gray-300">
+  <img
+    src={wallpaperImage}
+    alt="Blog Banner"
+    loading="lazy"
+    className="absolute top-0 left-0 w-full h-full object-cover z-0"
+  />
+
+  {!isAuthenticated && (
+    <Link to="/login">
+      <button className="relative z-10 mb-8 ml-10 text-white font-bold py-4 px-8 rounded border-2 hover:bg-gradient-to-r from-[#0A5455] to-[#72D2F3]">
+        Create Your Blog
+      </button>
+    </Link>
+  )}
+</div>
+
 
       {/* Blogs Section */}
       <div className="w-full py-8 bg-gray-100">
