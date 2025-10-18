@@ -1,0 +1,173 @@
+# Full Stack Blog Application
+
+A fully functional MERN stack blog application with secure authentication, CRUD operations for blog posts, and role-based access control. Users can register, log in, create blogs, edit or delete only their own posts, and view public blogs. This project is built for technical assessment.
+
+---
+
+## 🚀 Features
+
+- User authentication using JWT
+- Register, Login, Logout
+- Create, Read, Update, Delete blog posts
+- Users can edit/delete **only their own posts**
+- Public users can **view blogs without login**
+- State management for auth and blogs
+- Optimistic UI updates (Bonus)
+- Secure API routes with authentication middleware
+- Responsive UI and rich text blog editor
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- React.js
+- Redux Toolkit
+- Tailwind CSS
+- React Router Dom
+- React Quill Editor
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB + Mongoose
+- JWT Authentication
+- bcryptjs
+- dotenv
+- CORS
+
+---
+
+## 📦 Folder Structure
+
+project-root/
+│
+├── client/ # React frontend
+│ ├── src/
+| | ├── api/
+| | ├── app/
+| | ├── assests/
+| | ├── components/
+| | ├── features/
+| | ├── pages/
+| | ├── App.css/
+| | ├── App.jsx/
+| | ├── index.css/
+| | └──  main.jsx/
+│ ├── public/
+│ └── package.json
+│
+├── server/ # Node backend
+| ├── config/
+│ ├── controllers/
+│ ├── models/
+│ ├── routes/
+│ ├── middleware/
+| ├── validators/
+│ ├── .env
+│ └── server.js
+│
+└── README.md
+
+## ⚙️ Setup Instructions
+
+### ✅ 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/blog-site.git
+cd blog-site
+
+```
+
+
+## 🧪 API Testing (Postman)
+
+You can test the API easily using the Postman collection below:
+
+👉  Postman Collection link:
+https://adnan2.postman.co/workspace/My-Workspace~702c5279-d53d-408c-809b-43c128a5b96c/collection/34705955-684f9eae-9ee2-4839-9928-59f23ff21248?action=share&source=copy-link&creator=34705955
+
+
+## 📚 API Documentation
+
+Base URL: `http://localhost:5000/api/v1`
+
+---
+
+### 🔐 Auth Routes
+
+#### Register User
+**POST** `/auth/register`  
+**Description:** Register a new user  
+**Request Body:**
+
+```json
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "123456"
+}
+```
+
+#### Login User
+**POST** `/auth/register`  
+**Description:** login  user  
+**Request Body:**
+
+```json
+{
+  "email": "john@example.com",
+  "password": "123456"
+}
+```
+
+### 📝 Blog Routes
+
+#### Get All Blogs
+**GET** `/blogs/get-all-blogs`  
+**Description:** Fetch all blog posts (public)
+
+---
+
+#### Get Blog By ID
+**GET** `/blogs/get-blog-ById/:id`  
+**Description:** Fetch a single blog by its ID (public)  
+**Example:** `/blogs/get-blog-ById/68f3e107fb5ed5b5804accaa`
+
+---
+
+#### update Blog By ID
+**GET** `/blogs/update-blog-ById/:id`  
+**Description:** update  blog by its ID (owner)  
+**Example:** `/blogs/update-blog-ById/68f3e107fb5ed5b5804accaa`
+
+---
+
+#### delete Blog By ID
+**GET** `/blogs/delete-blog-ById/:id`  
+**Description:** delete blog by its ID (owner)  
+**Example:** `/blogs/delete-blog-ById/68f3e107fb5ed5b5804accaa`
+
+---
+
+#### get user Blogs
+**GET** `/blogs/get-user-blogs/:id`  
+**Description:** get user blogs (owner)  
+**Example:** `/blogs/get-user-blogs `
+
+---
+
+
+#### Create Blog
+**POST** `/blogs/create-blog`  
+**Description:** Create a new blog post (Authenticated users only)  
+**Headers:**
+Authorization: Bearer `<token>`  
+
+**Request Body:**
+```json
+{
+  "title": "My First Blog",
+  "content": "<p>This is my first blog content</p>",
+}
+```

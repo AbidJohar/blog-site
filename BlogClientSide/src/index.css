@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Map React Quill sizes to Tailwind styles */
+.ql-size-small { font-size: 0.875rem; }  
+.ql-size-large { font-size: 1.25rem; font-weight: 600; }  
+.ql-size-huge  { font-size: 2rem; font-weight: 700; }  
+
+/* Font family support for React Quill */
+.ql-font-sans-serif {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+.ql-font-serif {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.ql-font-monospace {
+  font-family: "Courier New", Courier, monospace;
+}
+
+ 
+ 
