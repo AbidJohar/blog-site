@@ -12,7 +12,7 @@ A fully functional MERN stack blog application with secure authentication, CRUD 
 - Users can edit/delete **only their own posts**
 - Public users can **view blogs without login**
 - State management for auth and blogs
-- Optimistic UI updates (Bonus)
+- Optimistic UI updates.
 - Secure API routes with authentication middleware
 - Responsive UI and rich text blog editor
 
@@ -41,31 +41,30 @@ A fully functional MERN stack blog application with secure authentication, CRUD 
 ## 📦 Folder Structure
 
 project-root/
-│
 ├── client/ # React frontend
 │ ├── src/
-| | ├── api/
-| | ├── app/
-| | ├── assests/
-| | ├── components/
-| | ├── features/
-| | ├── pages/
-| | ├── App.css/
-| | ├── App.jsx/
-| | ├── index.css/
-| | └──  main.jsx/
+│ │ ├── api/ # API calls
+│ │ ├── app/ # Redux store setup
+│ │ ├── assets/ # Images and static files
+│ │ ├── components/ # Reusable UI components
+│ │ ├── features/ # Redux slices
+│ │ ├── pages/ # React pages
+│ │ ├── App.css
+│ │ ├── App.jsx
+│ │ ├── index.css
+│ │ └── main.jsx
 │ ├── public/
 │ └── package.json
 │
-├── server/ # Node backend
-| ├── config/
-│ ├── controllers/
-│ ├── models/
-│ ├── routes/
-│ ├── middleware/
-| ├── validators/
-│ ├── .env
-│ └── server.js
+├── server/ # Node.js backend
+│ ├── config/ # Database configuration
+│ ├── controllers/ # Route handlers
+│ ├── models/ # Mongoose models
+│ ├── routes/ # API routes
+│ ├── middleware/ # Authentication middleware
+│ ├── validators/ # Request validation
+│ ├── .env # Environment variables
+│ └── server.js # App entry point
 │
 └── README.md
 
