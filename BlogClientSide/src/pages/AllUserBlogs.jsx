@@ -28,6 +28,7 @@ function AllUserBlogs() {
 
         if (data?.success) {
           setUserBlogs(data.blogs);
+          setLoading(false);
         }
       } catch (error) {
         console.error("Error fetching blogs:", error);
@@ -59,14 +60,12 @@ function AllUserBlogs() {
 
         {userData ? (
           userBlogs?.length > 0 ? (
-            // Render grid only if blogs exist
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {userBlogs.map((blog) => (
                 <BlogCard key={blog._id} blog={blog} fromPage={"home-page"} />
               ))}
             </div>
           ) : (
-            // Full width centered message
             <div className="flex justify-center w-full">
               <p className="text-gray-500 text-center">No Blogs found</p>
             </div>

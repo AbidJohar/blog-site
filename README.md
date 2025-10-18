@@ -197,6 +197,6 @@ Authorization: Bearer `<token>`
 ```json
 {
   "title": "My First Blog",
-  "content": "<p>This is my first blog content</p>",
+  "content": "This is my first blog content",
 }
 ```

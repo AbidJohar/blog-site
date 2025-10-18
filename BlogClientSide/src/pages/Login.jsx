@@ -6,31 +6,42 @@ import { Link, useNavigate } from 'react-router-dom';
 import Input from '../components/Input';
 import { useDispatch } from 'react-redux';
 import logo from '../assets/logo.jpg';
+import ReactLoading from 'react-loading';
  
 
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const { register, handleSubmit, formState: { isValid, errors } } = useForm({
     mode: 'onChange'
   });
 
  const onSubmit = async (data) => {
   setError('');
+  setLoading(true);
   try {
     const res = await dispatch(loginUser(data));
 
     if (res?.success) {
       navigate('/');
+      setLoading(false);
     }
   } catch (errorMessage) {
     console.log("Error in login:", errorMessage);
     setError(errorMessage); // <-- show real backend error
+  } finally {
+     setLoading(false)
   }
+   
 };
 
-  return (
+  return loading ? (
+     <div className="flex items-center justify-center w-full h-screen">
+       <ReactLoading type="bars" color="#00ffff" height={100} width={100} />
+     </div>
+   ) : (
     <div className="flex items-center justify-center w-full">
       <div className="mx-auto w-full max-w-lg mt-4 bg-gray-100 rounded-xl px-5 pt-1 pb-7 mb-4 border border-black/30">
         <div className="flex justify-center">

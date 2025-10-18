@@ -29,6 +29,7 @@ function HomePage() {
 
     fetchAllBlogs();
   }, []);
+  
 
   if (loading) {
     return (
@@ -40,7 +41,6 @@ function HomePage() {
 
   return (
     <div className="w-full">
-      {/* Hero Section */}
       <div
         className="w-full h-[80vh] flex items-end justify-start"
         style={{
@@ -62,17 +62,17 @@ function HomePage() {
       <div className="w-full py-8 bg-gray-100">
         <Container>
           <h2 className="text-2xl font-bold text-center mb-6">Latest Blogs</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {blogs?.length > 0 ? (
-              blogs.map((blog) => (
-                <div key={blog._id}>
-                  <BlogCard blog={blog} fromPage={"home-page"} />
-                </div>
-              ))
-            ) : (
-              <p>No Blogs found</p>
-            )}
-          </div>
+          {  blogs?.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {blogs.map((blog) => (
+                <BlogCard key={blog._id} blog={blog} fromPage={"home-page"} />
+              ))}
+            </div>
+          ) : (
+            <div className="flex justify-center w-full">
+              <p className="text-gray-500 text-center">No Blogs found</p>
+            </div>
+          ) }
         </Container>
       </div>
     </div>

@@ -2,13 +2,13 @@ import axios from 'axios';
 
 // Create an Axios instance with base configuration
 const apiClient = axios.create({
-  baseURL: 'http://localhost:5000/api/v1/',
+  baseURL: import.meta.env.VITE_API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-// ✅ Only attach token to headers
+// Only attach token to headers
 apiClient.interceptors.request.use((config) => {
   const token = localStorage.getItem('accessToken'); // get token
   if (token) {
